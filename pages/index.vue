@@ -4,4 +4,8 @@
 
 <script setup lang="ts"></script>
 
-<style scoped></style>
+<style scoped>
+div {
+  text-align: center;
+}
+</style>
