@@ -1,11 +1,8 @@
 <template>
-  <div>test</div>
+  <MainScreen />
+  <ServicesScreen />
 </template>
 
 <script setup lang="ts"></script>
 
-<style scoped>
-div {
-  text-align: center;
-}
-</style>
+<style scoped lang="scss"></style>

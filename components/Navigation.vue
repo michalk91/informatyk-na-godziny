@@ -37,13 +37,15 @@ nav {
   }
 
   .background {
-    position: absolute;
-    z-index: 4;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background: $background-color;
+    @media screen and (max-width: 1150px) {
+      position: absolute;
+      z-index: 5;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background: $background-color;
+    }
   }
 
   .menuToggle {
@@ -70,7 +72,7 @@ nav {
         left: 0;
         cursor: pointer;
         opacity: 0;
-        z-index: 6;
+        z-index: 7;
         -webkit-touch-callout: none;
 
         &:checked ~ span:nth-child(2) {
@@ -94,7 +96,7 @@ nav {
         position: relative;
         background: #cdcdcd;
         border-radius: 3px;
-        z-index: 5;
+        z-index: 6;
         transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
           background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
       }
@@ -108,7 +110,7 @@ nav {
     padding: 32px 102px 32px 0;
     transition: 0.4s;
     position: relative;
-    z-index: 6;
+    z-index: 7;
 
     @media screen and (max-width: 1150px) {
       flex-direction: column;
