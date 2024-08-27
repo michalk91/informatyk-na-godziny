@@ -9,7 +9,9 @@
       </Navigation>
     </header>
 
-    <slot />
+    <main>
+      <slot />
+    </main>
   </div>
 </template>
 
@@ -25,21 +27,25 @@ const navItems = [
 
 <style scoped lang="scss">
 header {
+  position: fixed;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 100%;
-  position: relative;
+  left: 0;
+  right: 0;
   z-index: 5;
 }
 .wrapper * {
-  color: white;
+  color: $primary-text;
 }
 .wrapper {
-  position: relative;
   max-width: 100%;
+  width: 100vw;
   font-family: "Montserrat";
-  min-height: 100vh;
   background: $background-color;
+
+  main {
+    width: 100%;
+  }
 }
 </style>
