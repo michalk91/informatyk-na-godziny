@@ -4,20 +4,18 @@
     preload
     width="247px"
     height="62px"
-    :imgAttrs="{
-      alt: 'main-logo',
-      class: 'image',
-    }"
+    alt="main logo"
+    class="logo"
   />
 </template>
 
 <script setup lang="ts"></script>
 
-<style lang="scss">
-.image {
+<style scoped lang="scss">
+.logo::v-deep(img) {
   position: relative;
   margin: 32px 60px 32px 102px;
-  z-index: 5;
+  z-index: 6;
   @media screen and (max-width: 1230px) {
     width: 200px;
     height: auto;
