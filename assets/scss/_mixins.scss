@@ -1,0 +1,4 @@
+@mixin grid-col-autofill($n, $min-width: 400px) {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(max($min-width, 100% / #{$n}), 1fr));
+}
