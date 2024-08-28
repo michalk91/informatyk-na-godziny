@@ -1,5 +1,5 @@
 <template>
-  <button>
+  <button :class="additionalClass">
     {{ text }}
   </button>
 </template>
@@ -7,6 +7,7 @@
 <script setup lang="ts">
 defineProps<{
   text: string;
+  additionalClass?: string;
 }>();
 </script>
 
@@ -14,8 +15,11 @@ defineProps<{
 button {
   display: flex;
   align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 4;
   gap: 10px;
-  height: 48px;
+  height: 56px;
   border: 0;
   background-color: $button-orange;
   border-radius: 30px;
