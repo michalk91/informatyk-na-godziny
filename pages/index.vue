@@ -1,6 +1,8 @@
 <template>
   <MainScreen />
   <ServicesScreen />
+  <PriceScreen />
+  <Faq />
 </template>
 
 <script setup lang="ts"></script>
