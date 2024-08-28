@@ -1,7 +1,7 @@
 <template>
   <section class="container">
     <span class="title">Faq</span>
-    <div v-for="question of questions" class="question-container">
+    <div v-if="!error" v-for="question of questions" class="question-container">
       <div class="question-inner-container">
         <article class="question">
           {{ question.name }}
@@ -18,6 +18,9 @@
       <div v-if="openedQuestionID === question.id" class="answer-container">
         <span class="answer">{{ question.body }}</span>
       </div>
+    </div>
+    <div v-else>
+      <FetchDataError />
     </div>
   </section>
 </template>
@@ -44,7 +47,10 @@ interface UseFetchResponse<T> {
 
 const { data: questions, error }: UseFetchResponse<FetchedData[]> =
   await useFetch<FetchedData[]>(
-    "https://jsonplaceholder.typicode.com/posts/1/comments"
+    "https://jsonplaceholder.typicode.com/posts/1/comments",
+    {
+      lazy: true,
+    }
   );
 
 function handleClick(id: number) {
@@ -74,6 +80,7 @@ function handleClick(id: number) {
     flex-direction: column;
 
     .answer {
+      text-align: left;
       color: #e6e6f0;
       font-size: 18px;
       line-height: 25.2px;
@@ -101,6 +108,7 @@ function handleClick(id: number) {
     }
 
     .question {
+      text-align: left;
       font-size: 20px;
       line-height: 28px;
       padding-bottom: 16px;
@@ -113,6 +121,7 @@ function handleClick(id: number) {
       width: 53px;
       height: 53px;
       position: relative;
+      right: 0;
 
       .line-one,
       .line-two {
@@ -132,12 +141,14 @@ function handleClick(id: number) {
         transform: translate(-15px, -31px);
       }
 
-      &:hover {
-        cursor: pointer;
+      @media (hover: hover) and (pointer: fine) {
+        &:hover {
+          cursor: pointer;
 
-        .line-one,
-        .line-two {
-          background-color: red;
+          .line-one,
+          .line-two {
+            background-color: red;
+          }
         }
       }
     }
