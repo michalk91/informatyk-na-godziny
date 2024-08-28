@@ -37,11 +37,12 @@ header {
 }
 .wrapper * {
   color: $primary-text;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
 }
 .wrapper {
   max-width: 100%;
   width: 100vw;
-  font-family: "Montserrat";
   background: $background-color;
 
   main {
