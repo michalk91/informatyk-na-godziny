@@ -1,14 +1,20 @@
 <template>
-  <button :class="additionalClass">
+  <button :class="additionalClass" :type="type">
     {{ text }}
   </button>
 </template>
 
 <script setup lang="ts">
-defineProps<{
-  text: string;
-  additionalClass?: string;
-}>();
+withDefaults(
+  defineProps<{
+    text: string;
+    additionalClass?: string;
+    type?: "button" | "submit" | "reset";
+  }>(),
+  {
+    type: "button",
+  }
+);
 </script>
 
 <style scoped lang="scss">
