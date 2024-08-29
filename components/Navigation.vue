@@ -1,13 +1,25 @@
 <template>
-  <nav>
-    <div @click.stop="handleClick" class="menuToggle">
-      <input type="checkbox" />
-      <span></span>
-      <span></span>
-      <span></span>
+  <nav :class="{ 'without-hamburger': withoutHamburgerMenu }">
+    <div
+      @click.stop="handleClick"
+      :class="{
+        menuToggle: !withoutHamburgerMenu,
+      }"
+    >
+      <div v-if="!withoutHamburgerMenu">
+        <input type="checkbox" />
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
-    <div class="background"></div>
-    <ul :class="{ showNav: menuOpen }">
+    <div :class="{ background: !withoutHamburgerMenu }"></div>
+    <ul
+      :class="{
+        showNav: menuOpen,
+        'without-hamburger': withoutHamburgerMenu,
+      }"
+    >
       <li v-for="item of items">
         {{ item.text }}
       </li>
@@ -21,6 +33,7 @@
 <script setup lang="ts">
 defineProps<{
   items: { text: string }[];
+  withoutHamburgerMenu?: boolean;
 }>();
 
 const menuOpen = shallowRef(false);
@@ -33,7 +46,14 @@ function handleClick() {
 <style scoped lang="scss">
 nav {
   .showNav {
-    transform: translate(-50%, 0);
+    .without-hamburger {
+      padding: 0;
+      margin: 0;
+    }
+
+    &:not(.without-hamburger) {
+      transform: translate(-50%, 0);
+    }
   }
 
   .background {
@@ -107,23 +127,29 @@ nav {
     flex-wrap: wrap;
     list-style: none;
     gap: 40px;
-    padding: 32px 102px 32px 0;
     transition: 0.4s;
     position: relative;
     z-index: 7;
+    padding-inline-start: 0px;
 
-    @media screen and (max-width: 1150px) {
-      flex-direction: column;
-      position: absolute;
-      align-items: center;
-      width: 100%;
-      top: 100%;
-      left: 50%;
-      padding-right: 0;
-      margin: 0;
-      transform: translate(-50%, -100%);
-      background-color: #5e607a;
-      z-index: 2;
+    &:not(.without-hamburger) {
+      padding: 32px 102px 32px 0;
+    }
+
+    &:not(.without-hamburger) {
+      @media screen and (max-width: 1150px) {
+        flex-direction: column;
+        position: absolute;
+        align-items: center;
+        width: 100%;
+        top: 100%;
+        left: 50%;
+        padding-right: 0;
+        margin: 0;
+        transform: translate(-50%, -100%);
+        background-color: #5e607a;
+        z-index: 2;
+      }
     }
 
     li {
