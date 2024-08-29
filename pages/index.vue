@@ -3,6 +3,7 @@
   <ServicesScreen />
   <PriceScreen />
   <Faq />
+  <Contact />
 </template>
 
 <script setup lang="ts"></script>
