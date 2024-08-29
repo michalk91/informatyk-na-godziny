@@ -7,17 +7,17 @@
         congue. Ipsum nec turpis.
       </p>
     </div>
-    <div class="cities-wrapper">
-      <div>Gdańsk</div>
-      <div>Gdynia</div>
-      <div>Wejherowo</div>
-      <div>Sopot</div>
-      <div>Kościerzyna</div>
-      <div>Tczew</div>
-      <div>Kartuzy</div>
-      <div>Starogard Gd.</div>
-      <div>Malbork</div>
-    </div>
+    <ul class="cities-wrapper">
+      <li>Gdańsk</li>
+      <li>Gdynia</li>
+      <li>Wejherowo</li>
+      <li>Sopot</li>
+      <li>Kościerzyna</li>
+      <li>Tczew</li>
+      <li>Kartuzy</li>
+      <li>Starogard Gd.</li>
+      <li>Malbork</li>
+    </ul>
     <span>... i okolice</span>
   </div>
 </template>
@@ -43,8 +43,10 @@
     font-size: 24px;
     text-align: center;
     gap: 8px;
+    padding-inline-start: 0;
 
-    div {
+    li {
+      list-style: none;
       padding: 16px 0;
       border: 1px solid #ffffff33;
       border-radius: 4px;
