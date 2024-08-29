@@ -8,7 +8,7 @@
           jak to możliwe.
         </p>
         <div class="phone-container">
-          <NuxtPicture src="/images/icons/gray_telephone.png" />
+          <NuxtPicture src="/images/icons/gray_telephone.png" alt="telephone" />
           <a href="tel:+48 58 500 80 10">+48 58 500 80 10</a>
         </div>
         <ContactForm />

@@ -6,7 +6,7 @@
     <div class="inner-container">
       <ActionButton text="Zamów Informatyka" />
       <div>
-        <NuxtPicture src="/images/icons/telephone.svg" />
+        <NuxtPicture src="/images/icons/telephone.svg" alt="telephone" />
         <a href="tel:+48 58 500 80 10">+48 58 500 80 10</a>
       </div>
     </div>
