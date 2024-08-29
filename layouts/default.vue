@@ -1,49 +1,28 @@
 <template>
   <div class="wrapper">
-    <header>
-      <Logo />
-      <Navigation :items="navItems">
-        <template #last-item>
-          <ActionButton text="Zamów Informatyka" />
-        </template>
-      </Navigation>
-    </header>
-
+    <LayoutHeader />
     <main>
       <slot />
     </main>
+    <LayoutFooter />
   </div>
 </template>
 
-<script setup lang="ts">
-const navItems = [
-  { text: "O nas" },
-  { text: "Usługi" },
-  { text: "Cennik" },
-  { text: "FAQ" },
-  { text: "Kontakt" },
-];
-</script>
+<script setup lang="ts"></script>
 
 <style scoped lang="scss">
-header {
-  position: fixed;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  left: 0;
-  right: 0;
-  z-index: 5;
-}
 .wrapper * {
   color: $primary-text;
   font-weight: 600;
   font-family: "Montserrat", sans-serif;
 }
+
 .wrapper {
   max-width: 100%;
+  position: relative;
   width: 100vw;
   background: $background-color;
+  padding-bottom: 223px;
 
   main {
     width: 100%;
