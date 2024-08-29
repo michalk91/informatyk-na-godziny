@@ -18,7 +18,7 @@ export default defineNuxtConfig({
   googleFonts: {
     families: {
       Montserrat: {
-        wght: [600, 400],
+        wght: [400, 600, 700],
       },
     },
     display: "swap",
