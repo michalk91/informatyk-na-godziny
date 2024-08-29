@@ -10,7 +10,7 @@
 
 <script setup lang="ts"></script>
 
-<style lang="scss">
+<style scoped lang="scss">
 .outer-wrapper {
   display: flex;
   flex-direction: column;
@@ -23,5 +23,9 @@
   max-width: 100%;
   display: flex;
   justify-content: space-between;
+
+  @media screen and (max-width: 650px) {
+    min-height: 100vh;
+  }
 }
 </style>
