@@ -1,5 +1,8 @@
 <template>
   <div class="wrapper">
+    <Modal :isOpen="isOpen" @closeModal="handleCloseModal">
+      <ModalContactForm />
+    </Modal>
     <PriceScreenCard
       name="Informatyk"
       price="160"
@@ -8,7 +11,12 @@
       :detailsList="[...ITSepcialistDetails]"
     >
       <template #button>
-        <ActionButton text="Zamów Informatyka" additionalClass="full-width" />
+        <ActionButton
+          @click="handleRole"
+          text="Zamów Informatyka"
+          additionalClass="full-width"
+          @handleClick="handleOpenModal"
+        />
       </template>
     </PriceScreenCard>
     <PriceScreenCard
@@ -20,8 +28,10 @@
     >
       <template #button>
         <ActionButton
+          @click="handleRole"
           text="Zamów Administratora"
           additionalClass="full-width blue-background"
+          @handleClick="handleOpenModal"
         />
       </template>
     </PriceScreenCard>
@@ -29,6 +39,19 @@
 </template>
 
 <script setup lang="ts">
+const store = useRoleStore();
+
+function handleRole(e: MouseEvent) {
+  const role = (e.target as HTMLElement).textContent;
+
+  if (role === "Zamów Informatyka") {
+    store.updateRole({ type: role, price: 160 });
+  } else if (role === "Zamów Administratora") {
+    store.updateRole({ type: role, price: 260 });
+  }
+}
+
+const isOpen = ref(false);
 const ITSepcialistDetails = [
   "Drukarki",
   "Skanery",
@@ -46,6 +69,14 @@ const adminDetails = [
   "Bezpieczeństwo IT",
   "Telefonia VoIP",
 ];
+
+function handleOpenModal() {
+  isOpen.value = true;
+}
+
+function handleCloseModal() {
+  isOpen.value = false;
+}
 </script>
 
 <style scoped lang="scss">
