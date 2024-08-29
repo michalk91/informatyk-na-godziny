@@ -2,7 +2,14 @@
   <section>
     <ServicesScreenAbout />
     <div class="numbers-wrapper"><ServicesScreenNumbers /></div>
-    <div class="image-wrapper"><Map /></div>
+    <div class="image-wrapper">
+      <NuxtPicture
+        src="/images/map.png"
+        alt="map"
+        class="image"
+        :class="additionalClass"
+      />
+    </div>
     <ServicesScreenArea />
   </section>
 </template>
@@ -29,6 +36,13 @@ section {
 
   .image-wrapper {
     padding-right: 104px;
+
+    .image::v-deep(img) {
+      user-select: none;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+    }
     @media screen and (max-width: 1357px) {
       padding-left: 0;
       padding-right: 0;
