@@ -2,5 +2,9 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(max(#{$min-width}, 80% / #{$n}), 1fr));
 
-
+}
+@mixin fit-image-to-container{
+    user-select: none;
+    width: 100%;
+    height: auto;
 }

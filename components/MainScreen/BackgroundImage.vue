@@ -11,10 +11,7 @@
 
 <style scoped lang="scss">
 .image::v-deep(img) {
-  user-select: none;
-  width: 100%;
-  max-width: 100%;
-  height: auto;
+  @include fit-image-to-container;
 
   @media screen and (max-width: 1500px) {
     display: none;

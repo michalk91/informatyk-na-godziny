@@ -6,7 +6,11 @@
     <div class="inner-container">
       <ActionButton text="Zamów Informatyka" />
       <div>
-        <NuxtPicture src="/images/icons/telephone.svg" alt="telephone" />
+        <NuxtPicture
+          src="/images/icons/telephone.svg"
+          alt="telephone"
+          class="image"
+        />
         <a href="tel:+48 58 500 80 10">+48 58 500 80 10</a>
       </div>
     </div>
@@ -16,6 +20,10 @@
 <script setup lang="ts"></script>
 
 <style scoped lang="scss">
+.image::v-deep(img) {
+  @include fit-image-to-container;
+}
+
 .container {
   margin-left: $horizontal-padding;
   margin-top: 301px;

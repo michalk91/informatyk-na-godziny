@@ -8,7 +8,11 @@
           jak to możliwe.
         </p>
         <div class="phone-container">
-          <NuxtPicture src="/images/icons/gray_telephone.png" alt="telephone" />
+          <NuxtPicture
+            src="/images/icons/gray_telephone.png"
+            alt="telephone"
+            class="image"
+          />
           <a href="tel:+48 58 500 80 10">+48 58 500 80 10</a>
         </div>
         <ContactForm />
@@ -27,6 +31,9 @@
 <script setup lang="ts"></script>
 
 <style scoped lang="scss">
+.image::v-deep(img) {
+  @include fit-image-to-container;
+}
 .container {
   margin-bottom: 186px;
   width: 100%;
@@ -67,10 +74,8 @@
 
       .image::v-deep(img) {
         transform: translateY(6%);
-        user-select: none;
-        width: 100%;
         max-width: 100%;
-        height: auto;
+        @include fit-image-to-container;
       }
     }
 

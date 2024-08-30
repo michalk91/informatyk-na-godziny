@@ -11,6 +11,7 @@
         <NuxtPicture
           src="/images/icons/arrow_down.png"
           alt="Downward arrow icon indicating a drop or collapse action"
+          class="image"
         />
       </summary>
       <p>
@@ -27,9 +28,13 @@
 <script setup lang="ts"></script>
 
 <style scoped lang="scss">
+.image::v-deep(img) {
+  @include fit-image-to-container;
+}
 .consent-container {
   width: 100%;
   max-width: 100%;
+
   details {
     summary {
       display: flex;
