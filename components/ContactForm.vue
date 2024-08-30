@@ -7,7 +7,11 @@
       <input
         type="text"
         id="name"
-        placeholder="Imię i nazwisko"
+        :placeholder="
+          errorMessages.nameAndSurname === ''
+            ? 'Imię i nazwisko'
+            : errorMessages.nameAndSurname
+        "
         v-model="formData.nameAndSurname"
         :class="{ 'invalid-input': errorMessages.nameAndSurname !== '' }"
       />
@@ -17,7 +21,9 @@
       <input
         type="text"
         id="email"
-        placeholder="Email"
+        :placeholder="
+          errorMessages.email === '' ? 'Email' : errorMessages.email
+        "
         v-model="formData.email"
         :class="{ 'invalid-input': errorMessages.email !== '' }"
       />
@@ -28,7 +34,9 @@
       >
       <input
         type="tel"
-        placeholder="Nr telefonu"
+        :placeholder="
+          errorMessages.tel === '' ? 'Nr telefonu' : errorMessages.tel
+        "
         id="phone"
         v-model="formData.tel"
         :class="{ 'invalid-input': errorMessages.tel !== '' }"
@@ -40,7 +48,9 @@
       >
       <textarea
         id="message"
-        placeholder="Wiadomość"
+        :placeholder="
+          errorMessages.message === '' ? 'Wiadomość' : errorMessages.message
+        "
         rows="3"
         v-model="formData.message"
         :class="{ 'invalid-input': errorMessages.message !== '' }"
@@ -55,19 +65,11 @@
 <script setup lang="ts">
 import { toast } from "vue3-toastify";
 
-interface FormErrors {
-  nameAndSurname: string;
-  email: string;
-  tel: string;
-  message: string;
-}
-
 interface FormData {
   nameAndSurname: string;
   email: string;
   tel: string;
   message: string;
-  error: boolean;
 }
 
 const formData = shallowReactive<FormData>({
@@ -75,75 +77,68 @@ const formData = shallowReactive<FormData>({
   email: "",
   tel: "",
   message: "",
-  error: false,
 });
 
-const errorMessages = shallowReactive<FormErrors>({
+const errorMessages = shallowReactive<FormData>({
   nameAndSurname: "",
   email: "",
   tel: "",
   message: "",
 });
 
-const resetErrorMessages = () => {
-  (Object.keys(errorMessages) as Array<keyof FormErrors>).forEach((key) => {
-    errorMessages[key] = "";
+const resetState = (state: FormData) => {
+  (Object.keys(state) as Array<keyof FormData>).forEach((key) => {
+    state[key] = "";
   });
 };
 
 function validateForm() {
-  resetErrorMessages();
+  resetState(errorMessages);
 
-  const nameAndSurnameRegex =
-    /^(?=.*\s)([A-Za-zÀ-ÿąćęłńóśźż][A-Za-zÀ-ÿąćęłńóśźż ',-]*[A-Za-zÀ-ÿąćęłńóśźż]){2,}$/;
-  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-  const telRegex = /^(\+?\d{1,3}[- ]?)?\(?\d{2,3}\)?[- ]?\d{3}[- ]?\d{3}$/;
-  const messageRegex = /^.{10,}$/;
+  const validators = {
+    nameAndSurname: {
+      regex:
+        /^(?=.*\s)([A-Za-zÀ-ÿąćęłńóśźż][A-Za-zÀ-ÿąćęłńóśźż ',-]*[A-Za-zÀ-ÿąćęłńóśźż]){2,}$/,
+      error: "Imię i nazwisko są wymagane.",
+    },
+    email: {
+      regex: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+      error: "Podaj poprawny adres e-mail.",
+    },
+    tel: {
+      regex: /^(\+?\d{1,3}[- ]?)?\(?\d{2,3}\)?[- ]?\d{3}[- ]?\d{3}$/,
+      error: "Podaj poprawny numer telefonu.",
+    },
+    message: {
+      regex: /^.{10,}$/,
+      error: "Wiadomość nie może być pusta.",
+    },
+  };
 
-  if (!nameAndSurnameRegex.test(formData.nameAndSurname)) {
-    errorMessages.nameAndSurname = "Imię i nazwisko są wymagane.";
-    formData.error = true;
-  }
-
-  if (!emailRegex.test(formData.email)) {
-    errorMessages.email = "Podaj poprawny adres e-mail.";
-    formData.error = true;
-  }
-
-  if (!telRegex.test(formData.tel)) {
-    errorMessages.tel = "Podaj poprawny numer telefonu.";
-    formData.error = true;
-  }
-
-  if (!messageRegex.test(formData.message)) {
-    errorMessages.message = "Wiadomość nie może być pusta.";
-    formData.error = true;
+  for (const [key, { regex, error }] of Object.entries(validators) as [
+    keyof typeof validators,
+    { regex: RegExp; error: string }
+  ][]) {
+    if (!regex.test(formData[key])) {
+      errorMessages[key] = error;
+    }
   }
 }
 
 function handleSubmit() {
   validateForm();
 
-  if (formData.error) {
-    (Object.keys(errorMessages) as Array<keyof FormErrors>).forEach((key) => {
-      if (errorMessages[key]) {
-        formData[key] = errorMessages[key];
-      }
+  const anyErrors = Object.values(errorMessages).some((error) => error !== "");
 
-      formData.error = false;
-    });
-  } else {
-    (Object.keys(formData) as Array<keyof FormData>).forEach((key) => {
-      if (key !== "error") {
-        formData[key] = "";
-      }
-    });
-
+  if (anyErrors) return;
+  else {
     toast.success("Wiadomość została pomyślnie wysłana", {
       autoClose: 2000,
       position: "bottom-right",
       theme: "light",
     });
+
+    resetState(formData);
   }
 }
 </script>
