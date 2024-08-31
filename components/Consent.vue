@@ -5,14 +5,18 @@
         <label>
           <input class="checkbox" type="checkbox" />
         </label>
-        Wyrażam zgodę na przetwarzanie przez Inprox sp. z o.o. sp. k. z siedzibą
-        w Gdańsku
-        <span class="custom-marker">Rozwiń</span>
-        <NuxtPicture
-          src="/images/icons/arrow_down.png"
-          alt="Downward arrow icon indicating a drop or collapse action"
-          class="image"
-        />
+        <span
+          >Wyrażam zgodę na przetwarzanie przez Inprox sp. z o.o. sp. k. z
+          siedzibą w Gdańsku
+
+          <span class="custom-marker">Rozwiń</span>
+          <NuxtPicture
+            src="/images/icons/arrow_down.png"
+            alt="Downward arrow icon indicating a drop or collapse action"
+            class="image"
+            width="9.68"
+            height="6.0"
+        /></span>
       </summary>
       <p>
         Wyrażam zgodę na przetwarzanie przez Inprox sp. z o.o. sp. k. z siedzibą
@@ -29,7 +33,10 @@
 
 <style scoped lang="scss">
 .image::v-deep(img) {
-  @include fit-image-to-container;
+  color: #7b7b7b;
+  padding: 0 5px;
+  min-width: 9.68px;
+  min-height: 6px;
 }
 .consent-container {
   width: 100%;
@@ -40,6 +47,14 @@
       display: flex;
       align-content: center;
       max-width: 100%;
+
+      span {
+        color: #7b7b7b;
+      }
+
+      .inner-consent-container {
+        display: flex;
+      }
 
       label {
         .checkbox {
@@ -56,7 +71,6 @@
         font-size: 12px;
         font-weight: 700;
         line-height: 16.8px;
-        padding-left: 4px;
 
         &:hover {
           cursor: pointer;

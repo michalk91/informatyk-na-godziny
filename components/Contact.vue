@@ -22,6 +22,8 @@
           src="/images/cropped_map.png"
           alt="Cropped map"
           class="image"
+          max-width="507"
+          max-height="492"
         />
       </div>
     </div>
@@ -31,9 +33,6 @@
 <script setup lang="ts"></script>
 
 <style scoped lang="scss">
-.image::v-deep(img) {
-  @include fit-image-to-container;
-}
 .container {
   margin-bottom: 186px;
   width: 100%;
@@ -50,9 +49,9 @@
 
   .inner-container {
     display: flex;
-    overflow: hidden;
-    position: relative;
     max-width: 1319px;
+    overflow: hidden;
+
     background: linear-gradient(
       189.38deg,
       #cecede -11.93%,
@@ -64,17 +63,20 @@
 
     .overlay {
       display: flex;
-      align-items: center;
+      padding-top: 140px;
       background-color: #555574;
       max-width: 553px;
+
+      @media screen and (max-width: 1669px) {
+        padding-top: 230px;
+      }
 
       @media screen and (max-width: 1650px) {
         display: none;
       }
 
       .image::v-deep(img) {
-        transform: translateY(6%);
-        max-width: 100%;
+        min-width: 331.53px;
         @include fit-image-to-container;
       }
     }
@@ -90,6 +92,9 @@
 
       @media screen and (max-width: 490px) {
         margin: 50px;
+      }
+      @media screen and (max-width: 400px) {
+        margin: 45px;
       }
 
       .submit-btn {
@@ -119,8 +124,18 @@
       .title {
         color: #39395c;
         font-weight: 700;
-        font-size: 40px;
+        font-size: 2.5rem;
         line-height: 48.76px;
+
+        @media screen and (max-width: 550px) {
+          font-size: 2.188rem;
+          line-height: 40px;
+        }
+
+        @media screen and (max-width: 400px) {
+          font-size: 2rem;
+          line-height: 35px;
+        }
       }
     }
   }
