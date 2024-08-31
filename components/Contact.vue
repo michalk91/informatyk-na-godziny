@@ -24,8 +24,8 @@
           src="/images/cropped_map.png"
           alt="Cropped map"
           class="image-map"
-          max-width="507"
-          max-height="492"
+          width="507"
+          height="492"
         />
       </div>
     </div>
@@ -62,7 +62,6 @@
     display: flex;
     max-width: 1319px;
     overflow: hidden;
-
     background: linear-gradient(
       189.38deg,
       #cecede -11.93%,
@@ -78,17 +77,14 @@
       background-color: #555574;
       max-width: 553px;
 
-      @media screen and (max-width: 1669px) {
-        padding-top: 230px;
-      }
-
       @media screen and (max-width: 1650px) {
         display: none;
+        padding-left: $horizontal-padding;
+        padding-right: $horizontal-padding;
       }
 
       .image-map::v-deep(img) {
-        min-width: 331.53px;
-        @include fit-image-to-container;
+        min-width: 507px;
       }
     }
 
@@ -97,7 +93,7 @@
       max-width: 513px;
       margin-bottom: 69px;
 
-      @media screen and (max-width: 970px) {
+      @media screen and (max-width: 1669px) {
         margin: 70px;
       }
 

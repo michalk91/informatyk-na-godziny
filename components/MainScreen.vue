@@ -23,6 +23,7 @@
   max-width: 100%;
   display: flex;
   justify-content: space-between;
+  max-height: 917px;
 
   @media screen and (max-width: 650px) {
     min-height: 100vh;
