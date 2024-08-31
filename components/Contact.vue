@@ -17,7 +17,7 @@
           />
           <a href="tel:+48 58 500 80 10">+48 58 500 80 10</a>
         </div>
-        <ContactForm />
+        <ContactScreenContactForm />
       </div>
       <div class="overlay">
         <NuxtPicture

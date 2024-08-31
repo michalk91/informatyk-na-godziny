@@ -35,12 +35,6 @@ const emits = defineEmits(["closeModal"]);
   opacity: 0;
 }
 
-.slide-fade-leave-from,
-.slide-fade-leave-to {
-  transform: translateY(0vh);
-  opacity: 0;
-}
-
 .v-enter-active,
 .v-leave-active {
   transition: opacity 0.5s ease;
