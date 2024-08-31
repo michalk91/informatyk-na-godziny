@@ -38,8 +38,11 @@ const { role } = useRoleStore();
     text-align: center;
   }
 
-  @media screen and (max-width: 400px) {
-    padding: 20px 20px 0 20px;
+  @media screen and (max-height: 700px) {
+    max-height: calc(100vh - 210px);
+    overflow-y: auto;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
   .title {
@@ -72,6 +75,13 @@ const { role } = useRoleStore();
       height: 100%;
       gap: 20px;
       padding-top: 20px;
+    }
+
+    @media screen and (max-height: 700px) {
+      max-height: calc(100vh - 210px);
+      overflow-y: auto;
+      padding-left: 40px;
+      padding-right: 40px;
     }
 
     @media screen and (max-width: 360px) {
