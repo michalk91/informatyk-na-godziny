@@ -1,5 +1,5 @@
 <template>
-  <button @click="$emit('handleClick')" :class="additionalClass" :type="type">
+  <button :class="additionalClass" :type="type">
     {{ text }}
   </button>
 </template>
@@ -10,7 +10,6 @@ withDefaults(
     text: string;
     additionalClass?: string;
     type?: "button" | "submit" | "reset";
-    handleClick?: () => void;
   }>(),
   {
     type: "button",
