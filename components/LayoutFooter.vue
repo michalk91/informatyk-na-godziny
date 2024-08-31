@@ -53,6 +53,10 @@ footer {
 
   .logo-container {
     padding-bottom: 61px;
+
+    @media screen and (max-width: 1460px) {
+      padding-bottom: 40px;
+    }
   }
 
   .nav-container {
@@ -61,6 +65,8 @@ footer {
     align-items: center;
     justify-content: space-between;
     padding-bottom: 20px;
+    column-gap: 60px;
+    row-gap: 40px;
     flex-wrap: wrap;
 
     span {
@@ -68,6 +74,11 @@ footer {
       font-weight: 700;
       line-height: 19.5px;
       font-style: italic;
+
+      @media screen and (max-width: 1522px) {
+        width: 100%;
+        text-align: right;
+      }
 
       .inprox {
         font-style: normal;
@@ -80,6 +91,8 @@ footer {
       gap: 10px;
 
       .text {
+        font-size: 14px;
+        line-height: 24px;
         color: #84cbff;
         font-style: normal;
 
