@@ -10,8 +10,8 @@
             <NuxtPicture
               src="/images/logos/tam_viewer.png"
               preload
-              width="247px"
-              height="62px"
+              width="20"
+              height="20"
               alt="main logo"
               class="icon"
             />
@@ -74,15 +74,24 @@ footer {
       }
     }
 
-    .text {
-      color: #84cbff;
-      font-style: normal;
-    }
-
     .tan-viewer-container {
       display: flex;
       align-items: center;
-      margin-left: -20px;
+      gap: 10px;
+
+      .text {
+        color: #84cbff;
+        font-style: normal;
+
+        &:hover {
+          text-decoration: underline;
+          transition: color 0.3s;
+        }
+      }
+
+      picture {
+        display: flex;
+      }
     }
   }
 
@@ -92,7 +101,7 @@ footer {
 
   .icon::v-deep(img) {
     width: auto;
-    height: 100%;
+    height: 20px;
   }
 
   .copyright-container {

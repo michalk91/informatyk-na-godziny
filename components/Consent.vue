@@ -35,8 +35,7 @@
 .image::v-deep(img) {
   color: #7b7b7b;
   padding: 0 5px;
-  min-width: 9.68px;
-  min-height: 6px;
+  height: 6px;
 }
 .consent-container {
   width: 100%;

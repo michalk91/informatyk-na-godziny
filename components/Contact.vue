@@ -11,7 +11,9 @@
           <NuxtPicture
             src="/images/icons/gray_telephone.png"
             alt="telephone"
-            class="image"
+            class="image-telephone"
+            height="30"
+            width="30"
           />
           <a href="tel:+48 58 500 80 10">+48 58 500 80 10</a>
         </div>
@@ -21,7 +23,7 @@
         <NuxtPicture
           src="/images/cropped_map.png"
           alt="Cropped map"
-          class="image"
+          class="image-map"
           max-width="507"
           max-height="492"
         />
@@ -33,6 +35,15 @@
 <script setup lang="ts"></script>
 
 <style scoped lang="scss">
+.image-telephone::v-deep(img) {
+  @include fit-image-to-container;
+  height: 30px;
+
+  @media screen and (max-width: 580px) {
+    height: 20px;
+  }
+}
+
 .container {
   margin-bottom: 186px;
   width: 100%;
@@ -75,7 +86,7 @@
         display: none;
       }
 
-      .image::v-deep(img) {
+      .image-map::v-deep(img) {
         min-width: 331.53px;
         @include fit-image-to-container;
       }
