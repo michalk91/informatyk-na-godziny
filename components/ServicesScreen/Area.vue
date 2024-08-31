@@ -18,7 +18,7 @@
       <li>Starogard Gd.</li>
       <li>Malbork</li>
     </ul>
-    <span>... i okolice</span>
+    <div>... i okolice</div>
   </div>
 </template>
 
@@ -53,7 +53,7 @@
       box-shadow: 0px 4px 4px 0px #00000040;
     }
   }
-  span {
+  div {
     margin-top: 32px;
     text-align: right;
   }
