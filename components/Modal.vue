@@ -16,7 +16,7 @@ defineProps<{
 const emits = defineEmits(["closeModal"]);
 </script>
 
-<style>
+<style scoped lang="scss">
 .modal-overlay {
   background: rgba(0, 0, 0, 0.5);
   position: fixed;
@@ -28,5 +28,12 @@ const emits = defineEmits(["closeModal"]);
   display: flex;
   align-items: center;
   justify-content: center;
+
+  .modal-content {
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    padding: 20px;
+  }
 }
 </style>

@@ -30,6 +30,10 @@ defineProps<{
   height: 88px;
   border-radius: 8px;
   border: 1px solid #e44f2e;
+
+  @media screen and (max-width: 735px) {
+    height: 65px;
+  }
 }
 .inner-price-container {
   display: flex;
@@ -37,6 +41,10 @@ defineProps<{
   justify-content: space-between;
   align-items: center;
   margin: 12px 19px;
+
+  @media screen and (max-width: 735px) {
+    margin: 5px 12px;
+  }
 
   .price-container {
     text-align: right;

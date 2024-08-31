@@ -32,11 +32,32 @@ const { role } = useRoleStore();
   border-radius: 8px;
   padding: 36px 50px;
 
+  @media screen and (max-width: 735px) {
+    height: 100%;
+    padding-bottom: 0;
+    text-align: center;
+  }
+
+  @media screen and (max-width: 400px) {
+    padding: 20px 20px 0 20px;
+  }
+
   .title {
     color: #39395c;
-    font-size: 32px;
+    font-size: 2rem;
     font-weight: 600;
     line-height: 35.2px;
+
+    @media screen and (max-width: 735px) {
+      text-align: center;
+      font-size: 1.7rem;
+      line-height: 20px;
+    }
+
+    @media screen and (max-width: 480px) {
+      font-size: 1.5rem;
+      line-height: 15px;
+    }
   }
 
   .outer-wrapper {
@@ -45,6 +66,18 @@ const { role } = useRoleStore();
     gap: 36px;
     padding-top: 33px;
     padding-bottom: 36px;
+
+    @media screen and (max-width: 735px) {
+      flex-wrap: wrap;
+      height: 100%;
+      gap: 20px;
+      padding-top: 20px;
+    }
+
+    @media screen and (max-width: 360px) {
+      gap: 10px;
+      padding-top: 10px;
+    }
 
     p {
       font-size: 16px;
@@ -57,6 +90,17 @@ const { role } = useRoleStore();
       display: flex;
       flex-direction: column;
       min-width: 433px;
+
+      @media screen and (max-width: 940px) {
+        min-width: 290px;
+        width: 290px;
+      }
+
+      @media screen and (max-width: 735px) {
+        min-width: 100%;
+        width: 100%;
+        align-items: center;
+      }
     }
 
     .service-details {

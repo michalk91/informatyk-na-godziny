@@ -36,9 +36,17 @@ form {
   gap: 18px;
   max-width: 433px;
 
+  @media screen and (max-width: 585px) {
+    gap: 10px;
+  }
+
   .city-container {
     display: flex;
     gap: 18px;
+
+    @media screen and (max-width: 735px) {
+      gap: 10px;
+    }
   }
 
   div {

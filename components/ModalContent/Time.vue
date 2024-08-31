@@ -5,8 +5,12 @@
       możliwe.</span
     >
     <p>Orientacyjny czas podjęcia działań</p>
-    <div>
-      <NuxtPicture src="/images/logos/time_logo.svg" alt="map" class="image" />
+    <div class="image-container">
+      <NuxtPicture
+        src="/images/logos/time_logo.svg"
+        alt="watch"
+        class="image"
+      />
       <p class="waiting-time">{{ waitingTime }}</p>
     </div>
   </div>
@@ -23,17 +27,32 @@ const waitingTime = computed(() => {
 </script>
 
 <style scoped lang="scss">
+.image::v-deep(img) {
+  @media screen and (max-width: 735px) {
+    height: 50px;
+  }
+}
 .wrapper {
-  div {
+  .image-container {
     display: flex;
+    align-items: center;
+
+    @media screen and (max-width: 735px) {
+      justify-content: center;
+      margin-bottom: 10px;
+    }
   }
 
   .waiting-time {
     font-family: Montserrat;
-    font-size: 28px;
+    font-size: 1.75rem;
     font-weight: 700;
     line-height: 34.13px;
     color: #39395c;
+
+    @media screen and (max-width: 785px) {
+      font-size: 1.4rem;
+    }
   }
 
   span {
@@ -43,6 +62,17 @@ const waitingTime = computed(() => {
     font-size: 16px;
     font-weight: 500;
     line-height: 19.5px;
+
+    @media screen and (max-width: 735px) {
+      margin-top: 20px;
+      text-align: center;
+    }
+  }
+
+  p {
+    @media screen and (max-width: 735px) {
+      text-align: center;
+    }
   }
 }
 </style>
