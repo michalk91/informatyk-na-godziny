@@ -37,9 +37,14 @@
 </template>
 
 <script setup lang="ts">
+import useScrollLock from "~/composables/useScrollLock";
+
+const { lockScroll, unlockScroll } = useScrollLock();
+
 const store = useRoleStore();
 
 const isOpen = ref(false);
+
 const ITSepcialistDetails = [
   "Drukarki",
   "Skanery",
@@ -61,12 +66,16 @@ const adminDetails = [
 function handleOpenModal(e: MouseEvent) {
   if ((e.target as HTMLElement).tagName !== "BUTTON") return;
 
+  lockScroll();
+
   handleRole(e);
   isOpen.value = true;
 }
 
 function handleCloseModal() {
   isOpen.value = false;
+
+  setTimeout(() => unlockScroll(), 500);
 }
 
 function handleRole(e: MouseEvent) {
