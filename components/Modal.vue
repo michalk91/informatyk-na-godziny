@@ -1,9 +1,9 @@
 <template>
   <teleport to="body">
     <Transition>
-      <div v-if="isOpen" @click="$emit('closeModal')" class="modal-overlay">
+      <div v-show="isOpen" @click="$emit('closeModal')" class="modal-overlay">
         <Transition name="slide-fade" appear>
-          <div class="modal-content" @click.stop>
+          <div v-if="isOpen" class="modal-content" @click.stop>
             <slot />
           </div>
         </Transition>
@@ -26,13 +26,12 @@ const emits = defineEmits(["closeModal"]);
 }
 
 .slide-fade-leave-active {
-  transition: all 0.3s ease-out;
+  transition: all 0.3s ease-in;
 }
 
 .slide-fade-enter-from,
 .slide-fade-leave-to {
   transform: translateY(60vh);
-  opacity: 0;
 }
 
 .v-enter-active,
