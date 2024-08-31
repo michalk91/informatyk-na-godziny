@@ -32,6 +32,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    text-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
 
     span {
       color: #e6e6f0;
