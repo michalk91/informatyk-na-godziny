@@ -4,6 +4,8 @@
     preload
     alt="Background overlay"
     class="image"
+    height="917"
+    width="1137"
   />
 </template>
 
