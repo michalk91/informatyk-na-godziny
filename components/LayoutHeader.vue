@@ -27,7 +27,7 @@ header {
   align-items: center;
   top: 0;
   left: 0;
-  right: 0;
+  width: 100vw;
   z-index: 5;
 }
 </style>

@@ -41,6 +41,8 @@ const navItems = [
 <style scoped lang="scss">
 footer {
   display: block;
+  position: relative;
+  z-index: 1;
   padding-left: $horizontal-padding;
   padding-right: $horizontal-padding;
   height: 260px;
