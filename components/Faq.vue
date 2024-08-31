@@ -9,7 +9,10 @@
         <div
           @click="handleClick(question.id)"
           class="toggle"
-          :class="{ rotate: openedQuestionID === question.id }"
+          :class="{
+            rotate: openedQuestionID === question.id,
+            opened: openedQuestionID === question.id,
+          }"
         >
           <span class="line-one"></span>
           <span class="line-two"></span>
@@ -78,6 +81,13 @@ function handleClick(id: number) {
   transform: translateY(30px);
 }
 
+.opened {
+  .line-one,
+  .line-two {
+    background-color: #ff7c5f !important;
+  }
+}
+
 .container {
   width: 100%;
   padding-left: $horizontal-padding;
@@ -136,6 +146,7 @@ function handleClick(id: number) {
       transition: 0.7s;
       transform: rotate(45deg);
     }
+
     .toggle {
       width: 53px;
       height: 53px;
@@ -167,7 +178,7 @@ function handleClick(id: number) {
 
           .line-one,
           .line-two {
-            background-color: red;
+            background-color: #007f3d;
           }
         }
       }
