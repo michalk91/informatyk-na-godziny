@@ -10,8 +10,12 @@
         <ModalContentTime />
 
         <div class="btns-container">
-          <ActionButton additionalClass="btn-white" text="Anuluj" />
-          <ActionButton text="Zamów" />
+          <ActionButton
+            additionalClass="btn-white"
+            text="Anuluj"
+            @click="$emit('closeModal')"
+          />
+          <ActionButton additionalClass="btn-orange" text="Zamów" />
         </div>
       </div>
     </div>
@@ -20,6 +24,8 @@
 
 <script setup lang="ts">
 const { role } = useRoleStore();
+
+const emits = defineEmits(["closeModal"]);
 </script>
 
 <style scoped lang="scss">
@@ -125,7 +131,23 @@ const { role } = useRoleStore();
         gap: 15px;
 
         .btn-white {
-          background-color: #cacaca;
+          font-family: "Montserrat", sans-serif;
+          background-color: white;
+          border: 1px solid #cacaca;
+
+          &:hover {
+            color: white;
+            background-color: lightgray;
+          }
+        }
+
+        .btn-orange {
+          color: white;
+          font-family: "Montserrat", sans-serif;
+
+          &:hover {
+            color: black;
+          }
         }
 
         button {
