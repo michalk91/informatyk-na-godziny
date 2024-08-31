@@ -1,11 +1,11 @@
 <template>
   <section class="container">
     <span class="title">Faq</span>
-    <div v-if="!error" v-for="question of questions" class="question-container">
-      <div class="question-inner-container">
-        <article class="question">
+    <ul v-if="!error" v-for="question of questions" class="question-container">
+      <li class="question-inner-container">
+        <span class="question">
           {{ question.name }}
-        </article>
+        </span>
         <div
           @click="handleClick(question.id)"
           class="toggle"
@@ -14,11 +14,14 @@
           <span class="line-one"></span>
           <span class="line-two"></span>
         </div>
-      </div>
-      <div v-if="openedQuestionID === question.id" class="answer-container">
-        <span class="answer">{{ question.body }}</span>
-      </div>
-    </div>
+      </li>
+
+      <TransitionGroup name="list" tag="div">
+        <div v-if="openedQuestionID === question.id" class="answer-container">
+          <span class="answer">{{ question.body }}</span>
+        </div>
+      </TransitionGroup>
+    </ul>
     <div v-else>
       <FetchDataError />
     </div>
@@ -63,6 +66,18 @@ function handleClick(id: number) {
 </script>
 
 <style scoped lang="scss">
+.list-move,
+.list-enter-active,
+.list-leave-active {
+  transition: all 0.5s cubic-bezier(0.42, 0.97, 0.52, 1.49);
+}
+
+.list-enter-from,
+.list-leave-to {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
 .container {
   width: 100%;
   padding-left: $horizontal-padding;
@@ -84,6 +99,7 @@ function handleClick(id: number) {
       color: #e6e6f0;
       font-size: 18px;
       line-height: 25.2px;
+      padding-bottom: 16px;
     }
   }
 
@@ -99,12 +115,15 @@ function handleClick(id: number) {
     justify-content: end;
     min-height: 86px;
     border-top: 1px solid white;
+    margin: 0;
+    padding-inline-start: 0;
 
     .question-inner-container {
       width: 100%;
       display: flex;
       justify-content: space-between;
       align-items: end;
+      padding-top: 33px;
     }
 
     .question {
@@ -120,6 +139,7 @@ function handleClick(id: number) {
     .toggle {
       width: 53px;
       height: 53px;
+      flex-shrink: 0;
       position: relative;
       right: 0;
 
