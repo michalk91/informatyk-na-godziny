@@ -35,6 +35,7 @@
 
   .inner-wrapper {
     margin-bottom: 32px;
+    text-align: left;
   }
 
   .cities-wrapper {

@@ -1,6 +1,6 @@
 <template>
   <Modal :isOpen="isOpen" @closeModal="handleCloseModal">
-    <ModalContactForm />
+    <ModalContent />
   </Modal>
   <div class="wrapper" @click="handleOpenModal">
     <PriceScreenCard
