@@ -12,6 +12,8 @@
 defineProps<{
   isOpen: boolean;
 }>();
+
+const emits = defineEmits(["closeModal"]);
 </script>
 
 <style>
