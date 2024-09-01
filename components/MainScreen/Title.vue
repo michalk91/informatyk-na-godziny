@@ -4,7 +4,11 @@
     <h2 class="subtitle">na godziny</h2>
     <h3 class="paragraph">Gdańsk / Gdynia / Sopot / Tczew</h3>
     <div class="inner-container">
-      <ActionButton text="Zamów Informatyka" />
+      <ActionButton
+        text="Zamów Informatyka"
+        data-role="Informatyk"
+        @click="handleEmitClickWIthEvent"
+      />
       <div>
         <NuxtPicture
           src="/images/icons/telephone.svg"
@@ -17,7 +21,15 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const emit = defineEmits<{
+  (e: "openModal", target: any): void;
+}>();
+
+function handleEmitClickWIthEvent(e: HTMLElement) {
+  emit("openModal", e);
+}
+</script>
 
 <style scoped lang="scss">
 .image::v-deep(img) {
