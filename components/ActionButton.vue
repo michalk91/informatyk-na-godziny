@@ -33,7 +33,6 @@ button {
   cursor: pointer;
 
   &:hover {
-    background-color: #c63924;
     color: black;
   }
 }

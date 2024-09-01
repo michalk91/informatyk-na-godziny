@@ -122,9 +122,5 @@ function handleRole(e: MouseEvent) {
 
 .blue-background {
   background-color: #682ee4;
-
-  &:hover {
-    background-color: #5a1cbd;
-  }
 }
 </style>
