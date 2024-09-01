@@ -1,6 +1,6 @@
 <template>
   <teleport to="body">
-    <Transition>
+    <Transition @after-leave="$emit('onAnimationEnded')">
       <div v-if="isOpen" @click="$emit('closeModal')" class="modal-overlay">
         <Transition name="slide-fade" appear>
           <div v-show="isOpen" class="modal-content" @click.stop>
@@ -17,7 +17,7 @@ defineProps<{
   isOpen: boolean;
 }>();
 
-const emits = defineEmits(["closeModal"]);
+const emits = defineEmits(["closeModal", "onAnimationEnded"]);
 </script>
 
 <style scoped lang="scss">

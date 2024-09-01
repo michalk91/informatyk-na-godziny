@@ -1,5 +1,9 @@
 <template>
-  <Modal :isOpen="isOpen" @closeModal="handleCloseModal">
+  <Modal
+    :isOpen="isOpen"
+    @closeModal="handleCloseModal"
+    @onAnimationEnded="unlockScroll"
+  >
     <ModalContent @closeModal="handleCloseModal" />
   </Modal>
   <section ref="sectionRef" class="outer-wrapper">
@@ -44,8 +48,6 @@ function handleOpenModal(e: MouseEvent) {
 
 function handleCloseModal() {
   isOpen.value = false;
-
-  setTimeout(() => unlockScroll(), 500);
 }
 
 function handleRole(e: MouseEvent) {
