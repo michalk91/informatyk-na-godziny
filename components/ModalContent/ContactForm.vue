@@ -40,11 +40,18 @@ form {
     gap: 10px;
   }
 
+  @media screen and (max-width: 735px) {
+    max-width: 100%;
+    width: 100%;
+  }
+
   .city-container {
     display: flex;
     gap: 18px;
 
     @media screen and (max-width: 735px) {
+      display: flex;
+      justify-content: center;
       gap: 10px;
     }
   }

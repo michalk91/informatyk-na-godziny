@@ -31,8 +31,8 @@ defineProps<{
   border-radius: 8px;
   border: 1px solid #e44f2e;
 
-  @media screen and (max-width: 735px) {
-    height: 65px;
+  @media screen and (max-width: 400px) {
+    height: auto;
   }
 }
 .inner-price-container {
@@ -44,6 +44,15 @@ defineProps<{
 
   @media screen and (max-width: 735px) {
     margin: 5px 12px;
+  }
+
+  @media screen and (max-width: 400px) {
+    flex-wrap: wrap;
+    column-gap: 30px;
+  }
+
+  @media screen and (max-width: 372px) {
+    justify-content: center;
   }
 
   .price-container {
