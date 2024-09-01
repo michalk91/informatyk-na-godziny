@@ -102,9 +102,10 @@ defineProps<{
     flex-direction: column;
     gap: 12px;
     padding-left: 38px;
+    padding-right: 38px;
     padding-top: 37px;
     text-align: left;
-    font-size: 20px;
+    font-size: 1.25rem;
     line-height: 28px;
 
     .paragraph {
@@ -118,7 +119,7 @@ defineProps<{
         margin-bottom: 0;
 
         @media screen and (max-width: 620px) {
-          font-size: 4vw;
+          font-size: 1.1rem;
         }
       }
 

@@ -36,13 +36,23 @@
 
     span {
       color: #e6e6f0;
-      font-size: 16px;
+      font-size: 1rem;
       line-height: 20.8px;
     }
     div {
       color: #ff7c5f;
-      font-size: 96px;
+      font-size: 6rem;
       line-height: 124.8px;
+
+      @media screen and (max-width: 420px) {
+        font-size: 5rem;
+        line-height: 120px;
+      }
+
+      @media screen and (max-width: 360px) {
+        font-size: 4rem;
+        line-height: 100px;
+      }
     }
   }
 }

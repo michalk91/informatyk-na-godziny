@@ -33,8 +33,18 @@
   h4 {
     padding-bottom: 23px;
     margin: 0;
-    font-size: 44px;
+    font-size: 2.75rem;
     line-height: 57.2px;
+
+    @media screen and (max-width: 420px) {
+      font-size: 2.2rem;
+      line-height: 50px;
+    }
+
+    @media screen and (max-width: 350px) {
+      font-size: 2rem;
+      line-height: 45px;
+    }
   }
   p {
     color: $tertiary-text;
@@ -54,6 +64,10 @@
       color: $tertiary-text;
       font-size: 24px;
       line-height: 16.4px;
+
+      @media screen and (max-width: 330px) {
+        line-height: 26px;
+      }
     }
   }
 }

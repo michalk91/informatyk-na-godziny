@@ -32,7 +32,7 @@ onMounted(() => {
 }
 section {
   display: grid;
-  scroll-margin-top: 300px;
+  scroll-margin-top: 200px;
   margin-top: 148px;
   max-width: 100%;
   justify-content: space-around;
@@ -46,6 +46,18 @@ section {
   @media screen and (max-width: 1050px) {
     padding-left: $mobile-horizontal-padding;
     padding-right: $mobile-horizontal-padding;
+  }
+
+  @media screen and (max-width: 750px) {
+    margin-top: 70px;
+  }
+
+  .numbers-wrapper {
+    @media screen and (max-width: 655px) {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+    }
   }
 
   .image-wrapper {

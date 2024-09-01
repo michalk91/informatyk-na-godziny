@@ -109,7 +109,7 @@ function handleClick(id: number) {
   padding-right: $horizontal-padding;
   text-align: center;
   margin-bottom: 183px;
-  scroll-margin-top: 150px;
+  scroll-margin-top: 180px;
 
   @media screen and (max-width: 1400px) {
     padding-left: $mobile-horizontal-padding;

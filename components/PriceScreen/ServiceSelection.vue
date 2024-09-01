@@ -107,7 +107,7 @@ function handleRole(e: MouseEvent) {
 .wrapper {
   display: flex;
   flex-wrap: wrap;
-  scroll-margin-top: 150px;
+  scroll-margin-top: 190px;
   gap: 52px;
   justify-content: center;
   padding-left: $mobile-horizontal-padding;

@@ -61,7 +61,7 @@ onMounted(() => {
 
 .container {
   margin-bottom: 186px;
-  scroll-margin-top: 150px;
+  scroll-margin-top: 180px;
   width: 100%;
   max-width: 100%;
   padding-left: $horizontal-padding;
