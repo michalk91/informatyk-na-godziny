@@ -40,6 +40,7 @@
 .consent-container {
   width: 100%;
   max-width: 100%;
+  text-align: left;
 
   details {
     summary {

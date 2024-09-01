@@ -51,8 +51,12 @@ const emits = defineEmits(["closeModal"]);
     padding-right: 10px;
   }
 
-  @media screen and (max-width: 370px) {
-    padding: 26px 30px;
+  @media screen and (max-width: 500px) {
+    padding: 25px 15px;
+  }
+
+  @media screen and (max-width: 420px) {
+    padding: 25px 10px;
   }
 
   .title {
@@ -64,6 +68,11 @@ const emits = defineEmits(["closeModal"]);
     @media screen and (max-width: 735px) {
       text-align: center;
       font-size: 1.7rem;
+    }
+
+    @media screen and (max-width: 380px) {
+      text-align: center;
+      font-size: 1.5rem;
     }
   }
 
@@ -87,10 +96,13 @@ const emits = defineEmits(["closeModal"]);
       padding-left: 40px;
       padding-right: 40px;
     }
+    @media screen and (max-width: 500px) {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
 
     @media screen and (max-width: 360px) {
       gap: 20px;
-      padding-top: 10px;
     }
 
     p {
