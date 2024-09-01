@@ -6,6 +6,7 @@
     class="image"
     height="917"
     width="1137"
+    quality="80"
   />
 </template>
 
