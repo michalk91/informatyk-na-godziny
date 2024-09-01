@@ -13,10 +13,22 @@
 
 <style scoped lang="scss">
 .image::v-deep(img) {
-  @include fit-image-to-container;
+  height: auto;
+  width: 1137px;
+  max-width: 100%;
+  animation: fadeInRight 0.5s ease-in;
 
   @media screen and (max-width: 1500px) {
     display: none;
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0.3;
+  }
+  to {
+    opacity: 1;
   }
 }
 </style>
