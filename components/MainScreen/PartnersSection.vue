@@ -4,8 +4,8 @@
       v-for="partner in partnersLogos"
       :src="partner.src"
       :alt="partner.alt"
-      width="240px"
-      height="109.8px"
+      width="240"
+      height="109.8"
       fit="contain"
     />
   </section>
