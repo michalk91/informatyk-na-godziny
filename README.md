@@ -1,75 +1,17 @@
-# Nuxt 3 Minimal Starter
+# Description
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+This is a website created for an IT company using Nuxt.
 
-## Setup
+## Live demo
 
-Make sure to install the dependencies:
+https://informatyk-na-godziny-3city.netlify.app/
 
-```bash
-# npm
-npm install
+## NPM packages used
+- nuxt: "^3.13.0",
+- nuxt/image: "^1.7.0",
+- nuxtjs/google-fonts: "^3.2.0",
+- pinia/nuxt: "^0.5.4",
+- modern-normalize: "^3.0.0",
+- pinia: "^2.2.2",
+- vue3-toastify: "^0.2.2"
 
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
