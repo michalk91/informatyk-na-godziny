@@ -126,7 +126,7 @@ onMounted(() => {
 
       .subtitle {
         color: #64647f;
-        font-size: 14px;
+        font-size: 1rem;
         font-weight: 24px;
       }
 
@@ -138,7 +138,7 @@ onMounted(() => {
 
         a {
           color: #39395c;
-          font-size: 20px;
+          font-size: 1.25rem;
           line-height: 24px;
           text-decoration: none;
         }

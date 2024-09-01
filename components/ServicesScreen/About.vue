@@ -62,7 +62,7 @@
 
     .title {
       color: $tertiary-text;
-      font-size: 24px;
+      font-size: 1.5rem;
       line-height: 16.4px;
 
       @media screen and (max-width: 330px) {

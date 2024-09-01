@@ -27,7 +27,7 @@
 <style scoped lang="scss">
 .outer-wrapper {
   h5 {
-    font-size: 44px;
+    font-size: 2.75rem;
     line-height: 61.6px;
     margin: 0;
     margin-bottom: 8px;
@@ -41,7 +41,7 @@
   .cities-wrapper {
     display: grid;
     @include grid-col-autofill(3, 210px);
-    font-size: 24px;
+    font-size: 1.5rem;
     text-align: center;
     gap: 8px;
     padding-inline-start: 0;

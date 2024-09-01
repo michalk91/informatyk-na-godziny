@@ -127,14 +127,14 @@ function handleClick(id: number) {
     .answer {
       text-align: left;
       color: #e6e6f0;
-      font-size: 18px;
+      font-size: 1.125rem;
       line-height: 25.2px;
       padding-bottom: 16px;
     }
   }
 
   .title {
-    font-size: 44px;
+    font-size: 2.75rem;
     line-height: 57.2px;
     text-transform: uppercase;
   }
@@ -157,7 +157,7 @@ function handleClick(id: number) {
 
     .question {
       text-align: left;
-      font-size: 20px;
+      font-size: 1.25rem;
       line-height: 28px;
       padding-bottom: 16px;
     }

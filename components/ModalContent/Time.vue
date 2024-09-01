@@ -59,7 +59,7 @@ const waitingTime = computed(() => {
     display: inline-block;
     color: #39395c;
     margin-top: 44px;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 500;
     line-height: 19.5px;
 

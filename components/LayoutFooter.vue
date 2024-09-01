@@ -72,7 +72,7 @@ footer {
     flex-wrap: wrap;
 
     span {
-      font-size: 16px;
+      font-size: 1rem;
       font-weight: 700;
       line-height: 19.5px;
       font-style: italic;
@@ -93,7 +93,7 @@ footer {
       gap: 10px;
 
       .text {
-        font-size: 14px;
+        font-size: 0.875rem;
         line-height: 24px;
         color: #84cbff;
         font-style: normal;
@@ -132,7 +132,7 @@ footer {
     .copyright {
       padding-top: 20px;
       color: #e6e6f0;
-      font-size: 12px;
+      font-size: 0.75rem;
       font-weight: 700;
       line-height: 16px;
       letter-spacing: 0.2571428716182709px;

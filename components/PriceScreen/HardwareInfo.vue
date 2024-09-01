@@ -22,11 +22,11 @@
   padding-right: $mobile-horizontal-padding;
 }
 .title {
-  font-size: 22px;
+  font-size: 1.375rem;
   line-height: 30.8px;
 }
 .text {
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 22.4px;
 }
 </style>

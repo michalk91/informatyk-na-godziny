@@ -91,7 +91,7 @@ nav {
       li {
         display: flex;
         align-items: center;
-        font-size: 14px;
+        font-size: 0.875rem;
         line-height: 17.07px;
 
         &:hover {

@@ -73,7 +73,7 @@ function handleEmitClickWIthEvent(e: HTMLElement) {
 
       a,
       svg {
-        font-size: 16px;
+        font-size: 1rem;
         line-height: 24px;
         text-decoration: none;
       }
@@ -84,7 +84,7 @@ function handleEmitClickWIthEvent(e: HTMLElement) {
   .subtitle {
     margin: 0;
     line-height: 90.2px;
-    font-size: 82px;
+    font-size: 5.125rem;
 
     @media screen and (max-width: 650px) {
       font-size: 4rem;
@@ -108,7 +108,7 @@ function handleEmitClickWIthEvent(e: HTMLElement) {
   }
   .paragraph {
     text-align: left;
-    font-size: 25px;
+    font-size: 1.563rem;
     line-height: 27.5px;
     font-style: italic;
 

@@ -158,7 +158,7 @@ defineProps<{
     padding-top: 29px;
 
     .name {
-      font-size: 34px;
+      font-size: 2.125rem;
       line-height: 47.6px;
 
       @media screen and (max-width: 620px) {
@@ -172,7 +172,7 @@ defineProps<{
       }
 
       .price {
-        font-size: 64px;
+        font-size: 4rem;
         line-height: 89.6px;
 
         @media screen and (max-width: 620px) {
@@ -180,7 +180,7 @@ defineProps<{
         }
       }
       .currency {
-        font-size: 16px;
+        font-size: 1rem;
         line-height: 22.4px;
       }
     }

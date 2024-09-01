@@ -28,7 +28,7 @@
   margin-bottom: 181px;
 
   .title {
-    font-size: 32px;
+    font-size: 2rem;
     line-height: 38.4px;
 
     @media screen and (max-width: 870px) {
@@ -59,7 +59,7 @@
       }
 
       .price {
-        font-size: 32px;
+        font-size: 2rem;
         line-height: 38.4px;
       }
       &:first-child {

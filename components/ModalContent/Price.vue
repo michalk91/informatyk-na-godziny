@@ -71,15 +71,15 @@ defineProps<{
   }
 
   .price {
-    font-size: 30px;
+    font-size: 1.875rem;
   }
 
   span {
-    font-size: 24px;
+    font-size: 1.5rem;
     line-height: 33.6px;
   }
   .currency {
-    font-size: 10px;
+    font-size: 0.625rem;
     margin-top: -5px;
   }
   .every-hour {
@@ -92,7 +92,7 @@ defineProps<{
   }
 
   p {
-    font-size: 10px;
+    font-size: 0.625rem;
     font-weight: 400;
     line-height: 14px;
     padding-bottom: 21px;

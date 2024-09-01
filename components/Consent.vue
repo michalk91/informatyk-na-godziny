@@ -68,7 +68,7 @@
 
       .custom-marker {
         color: #7b7b7b;
-        font-size: 12px;
+        font-size: 0.75rem;
         font-weight: 700;
         line-height: 16.8px;
 
@@ -95,7 +95,7 @@
     summary,
     p {
       color: #7b7b7b;
-      font-size: 12px;
+      font-size: 0.75rem;
       font-weight: 400;
       line-height: 16.8px;
     }

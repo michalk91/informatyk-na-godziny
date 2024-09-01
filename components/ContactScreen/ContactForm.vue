@@ -152,7 +152,7 @@ form {
   &::placeholder {
     color: #64647f;
     font-weight: 700;
-    font-size: 14px;
+    font-size: 0.875rem;
     line-height: 24px;
   }
 

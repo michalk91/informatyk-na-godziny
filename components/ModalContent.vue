@@ -106,7 +106,7 @@ const emits = defineEmits(["closeModal"]);
     }
 
     p {
-      font-size: 16px;
+      font-size: 1rem;
       font-weight: 400;
       line-height: 19.5px;
       color: #7b7b7b;
