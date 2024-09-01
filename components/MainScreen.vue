@@ -29,7 +29,9 @@ onMounted(() => {
   });
 });
 
-const { lockScroll, unlockScroll } = useScrollLock({});
+const { lockScroll, unlockScroll } = useScrollLock({
+  withoutScrollCompensation: false,
+});
 
 function handleOpenModal(e: MouseEvent) {
   if ((e.target as HTMLElement).tagName !== "BUTTON") return;
