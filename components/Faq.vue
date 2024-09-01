@@ -11,6 +11,7 @@
           class="toggle"
           :class="{
             rotate: openedQuestionID === question.id,
+            'rotate-back': openedQuestionID !== question.id,
             opened: openedQuestionID === question.id,
           }"
         >
@@ -144,7 +145,12 @@ function handleClick(id: number) {
     }
     .rotate {
       transition: 0.7s;
-      transform: rotate(45deg);
+      transform: rotate(-45deg);
+    }
+
+    .rotate-back {
+      transition: 0.7s;
+      transform: rotate(-90deg);
     }
 
     .toggle {
