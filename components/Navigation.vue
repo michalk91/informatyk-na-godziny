@@ -1,13 +1,13 @@
 <template>
   <nav :class="{ 'without-hamburger': withoutHamburgerMenu }">
     <div
-      @click.stop="handleClick"
+      @click.stop="handleToggleOpen"
       :class="{
         menuToggle: !withoutHamburgerMenu,
       }"
     >
       <div v-if="!withoutHamburgerMenu">
-        <input type="checkbox" />
+        <input ref="checkbox" type="checkbox" />
         <span></span>
         <span></span>
         <span></span>
@@ -35,27 +35,42 @@
 
 <script setup lang="ts">
 import { useIsScrolledDown } from "#imports";
+import { useScrollLock } from "#imports";
 
 const scrolledDown = shallowRef(false);
+const checkbox = shallowRef<null | HTMLInputElement>(null);
+const store = useScreenStore();
+const menuOpen = shallowRef(false);
 
 useIsScrolledDown(scrolledDown);
+
+const { lockScroll, unlockScroll } = useScrollLock({
+  withoutScrollCompensation: true,
+});
 
 defineProps<{
   items: { text: string; id: string }[];
   withoutHamburgerMenu?: boolean;
 }>();
 
-const store = useScreenStore();
-
-const menuOpen = shallowRef(false);
-
-function handleClick() {
+function handleToggleOpen() {
   menuOpen.value = !menuOpen.value;
 }
 
 function setScreen(screenName: string) {
   store.setSelectedScreen({ name: screenName });
 }
+
+const screenName = useScreenStore();
+
+watch(menuOpen, () => {
+  menuOpen.value ? lockScroll() : unlockScroll();
+});
+
+watch(screenName.selectedScreen, () => {
+  menuOpen.value = false;
+  if (checkbox.value) checkbox.value.checked = false;
+});
 </script>
 
 <style scoped lang="scss">
@@ -181,7 +196,7 @@ nav {
       padding-inline-start: 0px;
       padding: 32px 102px 32px 0;
       column-gap: 40px;
-      row-gap: 60px;
+      row-gap: 50px;
 
       @media screen and (max-width: 1150px) {
         flex-direction: column;
@@ -191,6 +206,7 @@ nav {
         top: 100%;
         left: 50%;
         padding-right: 0;
+        padding-top: 50px;
         margin: 0;
         transform: translate(-50%, -100%);
         background-color: #5e607a;

@@ -53,7 +53,7 @@ onMounted(() => {
   });
 });
 
-const { lockScroll, unlockScroll } = useScrollLock();
+const { lockScroll, unlockScroll } = useScrollLock({});
 
 const store = useRoleStore();
 

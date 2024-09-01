@@ -1,13 +1,23 @@
-function useScrollLock() {
+function useScrollLock({
+  withoutScrollCompensation = false,
+}: {
+  withoutScrollCompensation?: boolean;
+}) {
   function lockScroll() {
-    const scrollBarCompensation = window.innerWidth - document.body.offsetWidth;
     document.body.style.overflow = "hidden";
-    document.body.style.paddingRight = `${scrollBarCompensation}px`;
+    if (!withoutScrollCompensation) {
+      const scrollBarCompensation =
+        window.innerWidth - document.body.offsetWidth;
+      document.body.style.paddingRight = `${scrollBarCompensation}px`;
+    }
   }
 
   function unlockScroll() {
     document.body.style.overflow = "";
-    document.body.style.paddingRight = "";
+
+    if (!withoutScrollCompensation) {
+      document.body.style.paddingRight = "";
+    }
   }
 
   return { lockScroll, unlockScroll };
