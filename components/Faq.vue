@@ -1,8 +1,12 @@
 <template>
   <section ref="sectionRef" class="container">
     <span class="title">Faq</span>
-    <ul v-if="!error" v-for="question of questions" class="question-container">
-      <li class="question-inner-container">
+    <article
+      v-if="!error"
+      v-for="question of questions"
+      class="question-container"
+    >
+      <div class="question-inner-container">
         <span class="question">
           {{ question.name }}
         </span>
@@ -18,14 +22,14 @@
           <span class="line-one"></span>
           <span class="line-two"></span>
         </div>
-      </li>
+      </div>
 
       <TransitionGroup name="list" tag="div">
         <div v-if="openedQuestionID === question.id" class="answer-container">
           <span class="answer">{{ question.body }}</span>
         </div>
       </TransitionGroup>
-    </ul>
+    </article>
     <div v-else>
       <FetchDataError />
     </div>
@@ -142,7 +146,6 @@ function handleClick(id: number) {
     min-height: 86px;
     border-top: 1px solid white;
     margin: 0;
-    padding-inline-start: 0;
 
     .question-inner-container {
       width: 100%;
