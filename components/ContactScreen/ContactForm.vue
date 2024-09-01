@@ -1,12 +1,11 @@
 <template>
   <form @submit.prevent="handleSubmit">
     <div>
-      <label for="name" aria-hidden="true" aria-label="name and surrname"
-        >Imię i nazwisko:</label
-      >
+      <label for="name" aria-hidden="true">Imię i nazwisko:</label>
       <input
         type="text"
         id="name"
+        aria-label="name and surrname"
         :placeholder="
           errorMessages.nameAndSurname === ''
             ? 'Imię i nazwisko'
@@ -17,10 +16,11 @@
       />
     </div>
     <div>
-      <label for="email" aria-hidden="true" aria-label="email">Email:</label>
+      <label for="email" aria-hidden="true">Email:</label>
       <input
         type="text"
         id="email"
+        aria-label="email"
         :placeholder="
           errorMessages.email === '' ? 'Email' : errorMessages.email
         "
@@ -29,11 +29,10 @@
       />
     </div>
     <div>
-      <label for="phone-number" aria-hidden="true" aria-label="phone number"
-        >Nr telefonu:</label
-      >
+      <label for="phone-number" aria-hidden="true">Nr telefonu:</label>
       <input
         type="tel"
+        aria-label="phone number"
         :placeholder="
           errorMessages.tel === '' ? 'Nr telefonu' : errorMessages.tel
         "
@@ -43,11 +42,10 @@
       />
     </div>
     <div>
-      <label for="message" aria-hidden="true" aria-label="message"
-        >Wiadomość:</label
-      >
+      <label for="message" aria-hidden="true">Wiadomość:</label>
       <textarea
         id="message"
+        aria-label="message"
         :placeholder="
           errorMessages.message === '' ? 'Wiadomość' : errorMessages.message
         "
