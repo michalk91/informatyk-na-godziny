@@ -1,9 +1,9 @@
 <template>
   <teleport to="body">
     <Transition>
-      <div v-show="isOpen" @click="$emit('closeModal')" class="modal-overlay">
+      <div v-if="isOpen" @click="$emit('closeModal')" class="modal-overlay">
         <Transition name="slide-fade" appear>
-          <div v-if="isOpen" class="modal-content" @click.stop>
+          <div v-show="isOpen" class="modal-content" @click.stop>
             <slot />
           </div>
         </Transition>
