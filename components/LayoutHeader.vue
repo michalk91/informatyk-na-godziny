@@ -11,11 +11,11 @@
 
 <script setup lang="ts">
 const navItems = [
-  { text: "O nas" },
-  { text: "Usługi" },
-  { text: "Cennik" },
-  { text: "FAQ" },
-  { text: "Kontakt" },
+  { text: "O nas", id: "about" },
+  { text: "Usługi", id: "services" },
+  { text: "Cennik", id: "prices" },
+  { text: "FAQ", id: "faq" },
+  { text: "Kontakt", id: "contact" },
 ];
 </script>
 

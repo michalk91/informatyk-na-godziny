@@ -1,5 +1,5 @@
 <template>
-  <section class="container">
+  <section ref="sectionRef" class="container">
     <div class="inner-container">
       <div class="form-container">
         <span class="title">Skontaktuj się z nami</span>
@@ -32,7 +32,22 @@
   </section>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import useScrollToSection from "~/composables/useScrollToSection";
+
+const sectionRef = ref<null | HTMLElement>(null);
+
+const screenName = useScreenStore();
+
+onMounted(() => {
+  useScrollToSection({
+    elemRef: sectionRef.value,
+    screenStore: screenName,
+    screenName: "contact",
+    block: "start",
+  });
+});
+</script>
 
 <style scoped lang="scss">
 .image-telephone::v-deep(img) {
@@ -46,6 +61,7 @@
 
 .container {
   margin-bottom: 186px;
+  scroll-margin-top: 150px;
   width: 100%;
   max-width: 100%;
   padding-left: $horizontal-padding;

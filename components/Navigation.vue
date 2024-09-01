@@ -19,7 +19,7 @@
         showNav: menuOpen && !withoutHamburgerMenu,
       }"
     >
-      <li v-for="item of items">
+      <li v-for="item of items" @click.stop="setScreen(item.id)">
         {{ item.text }}
       </li>
       <li>
@@ -31,14 +31,20 @@
 
 <script setup lang="ts">
 defineProps<{
-  items: { text: string }[];
+  items: { text: string; id: string }[];
   withoutHamburgerMenu?: boolean;
 }>();
+
+const store = useScreenStore();
 
 const menuOpen = shallowRef(false);
 
 function handleClick() {
   menuOpen.value = !menuOpen.value;
+}
+
+function setScreen(screenName: string) {
+  store.setSelectedScreen({ name: screenName });
 }
 </script>
 

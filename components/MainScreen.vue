@@ -1,14 +1,29 @@
 <template>
-  <div class="outer-wrapper">
+  <section ref="sectionRef" class="outer-wrapper">
     <div class="wrapper">
       <MainScreenTitle />
       <MainScreenBackgroundImage />
     </div>
     <MainScreenPartnersSection />
-  </div>
+  </section>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import useScrollToSection from "~/composables/useScrollToSection";
+
+const sectionRef = ref<null | HTMLElement>(null);
+
+const screenName = useScreenStore();
+
+onMounted(() => {
+  useScrollToSection({
+    elemRef: sectionRef.value,
+    screenStore: screenName,
+    screenName: "about",
+    block: "start",
+  });
+});
+</script>
 
 <style scoped lang="scss">
 .outer-wrapper {

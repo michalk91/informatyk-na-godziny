@@ -2,7 +2,7 @@
   <Modal :isOpen="isOpen" @closeModal="handleCloseModal">
     <ModalContent @closeModal="handleCloseModal" />
   </Modal>
-  <div class="wrapper" @click="handleOpenModal">
+  <section ref="sectionRef" class="wrapper" @click="handleOpenModal">
     <PriceScreenCard
       name="Informatyk"
       price="160"
@@ -33,11 +33,25 @@
         />
       </template>
     </PriceScreenCard>
-  </div>
+  </section>
 </template>
 
 <script setup lang="ts">
 import useScrollLock from "~/composables/useScrollLock";
+import useScrollToSection from "~/composables/useScrollToSection";
+
+const sectionRef = ref<null | HTMLElement>(null);
+
+const screenName = useScreenStore();
+
+onMounted(() => {
+  useScrollToSection({
+    elemRef: sectionRef.value,
+    screenStore: screenName,
+    screenName: "prices",
+    block: "start",
+  });
+});
 
 const { lockScroll, unlockScroll } = useScrollLock();
 
@@ -93,6 +107,7 @@ function handleRole(e: MouseEvent) {
 .wrapper {
   display: flex;
   flex-wrap: wrap;
+  scroll-margin-top: 150px;
   gap: 52px;
   justify-content: center;
   padding-left: $mobile-horizontal-padding;

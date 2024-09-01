@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section ref="sectionRef">
     <ServicesScreenAbout />
     <div class="numbers-wrapper"><ServicesScreenNumbers /></div>
     <div class="image-wrapper">
@@ -9,7 +9,22 @@
   </section>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import useScrollToSection from "~/composables/useScrollToSection";
+
+const sectionRef = ref<null | HTMLElement>(null);
+
+const screenName = useScreenStore();
+
+onMounted(() => {
+  useScrollToSection({
+    elemRef: sectionRef.value,
+    screenStore: screenName,
+    screenName: "services",
+    block: "start",
+  });
+});
+</script>
 
 <style scoped lang="scss">
 .image::v-deep(img) {
@@ -17,6 +32,7 @@
 }
 section {
   display: grid;
+  scroll-margin-top: 300px;
   margin-top: 148px;
   max-width: 100%;
   justify-content: space-around;

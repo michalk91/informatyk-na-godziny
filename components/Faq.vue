@@ -1,5 +1,5 @@
 <template>
-  <section class="container">
+  <section ref="sectionRef" class="container">
     <span class="title">Faq</span>
     <ul v-if="!error" v-for="question of questions" class="question-container">
       <li class="question-inner-container">
@@ -33,7 +33,21 @@
 </template>
 
 <script setup lang="ts">
+import useScrollToSection from "~/composables/useScrollToSection";
+
+const sectionRef = ref<null | HTMLElement>(null);
 const openedQuestionID = shallowRef<number | null>(null);
+
+const screenName = useScreenStore();
+
+onMounted(() => {
+  useScrollToSection({
+    elemRef: sectionRef.value,
+    screenStore: screenName,
+    screenName: "faq",
+    block: "start",
+  });
+});
 
 interface FetchedData {
   postId: number;
@@ -95,6 +109,7 @@ function handleClick(id: number) {
   padding-right: $horizontal-padding;
   text-align: center;
   margin-bottom: 183px;
+  scroll-margin-top: 150px;
 
   @media screen and (max-width: 1400px) {
     padding-left: $mobile-horizontal-padding;
