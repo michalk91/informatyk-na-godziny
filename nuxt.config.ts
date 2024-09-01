@@ -1,6 +1,13 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: "2024-04-03",
+  app: {
+    head: {
+      title: "Informatyk na godziny",
+      charset: "utf-8",
+      viewport: "width=device-width, initial-scale=1",
+    },
+  },
   devtools: { enabled: true },
   modules: ["@nuxt/image", "@nuxtjs/google-fonts", "@pinia/nuxt"],
   css: ["~/node_modules/modern-normalize/modern-normalize.css"],
