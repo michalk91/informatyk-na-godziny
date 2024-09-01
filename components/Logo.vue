@@ -21,7 +21,7 @@
     height: auto;
 
     @media screen and (max-width: 510px) {
-      margin: 40px 0 40px 40px;
+      margin: 10px 0 10px 30px;
     }
 
     @media screen and (max-width: 370px) {

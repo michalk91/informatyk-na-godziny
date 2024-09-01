@@ -196,7 +196,7 @@ nav {
       padding-inline-start: 0px;
       padding: 32px 102px 32px 0;
       column-gap: 40px;
-      row-gap: 50px;
+      row-gap: 40px;
 
       @media screen and (max-width: 1150px) {
         flex-direction: column;
