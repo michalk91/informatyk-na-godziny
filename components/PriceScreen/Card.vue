@@ -16,7 +16,7 @@
             'icon-orange': iconsColor === 'orange',
           }"
         >
-          <NuxtPicture src="/images/icons/check_mark.svg" />
+          <NuxtPicture src="/images/icons/check_mark.svg" alt="check mark" />
         </div>
         <p>{{ item }}</p>
       </div>
