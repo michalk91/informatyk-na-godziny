@@ -3,7 +3,7 @@
     <Logo />
     <Navigation :items="navItems">
       <template #last-item>
-        <ActionButton text="Zamów Informatyka" />
+        <ActionButton text="Zamów Informatyka" @click="setScreen" />
       </template>
     </Navigation>
   </header>
@@ -17,6 +17,12 @@ const navItems = [
   { text: "FAQ", id: "faq" },
   { text: "Kontakt", id: "contact" },
 ];
+
+const store = useScreenStore();
+
+function setScreen() {
+  store.setSelectedScreen({ name: "prices" });
+}
 </script>
 
 <style scoped lang="scss">
