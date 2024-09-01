@@ -13,7 +13,11 @@
         <span></span>
       </div>
     </div>
-    <div v-if="!withoutHamburgerMenu" class="background"></div>
+    <div
+      v-if="!withoutHamburgerMenu"
+      class="background"
+      :class="{ 'transparent-background': scrolledDown }"
+    ></div>
     <ul
       :class="{
         showNav: menuOpen && !withoutHamburgerMenu,
@@ -30,6 +34,12 @@
 </template>
 
 <script setup lang="ts">
+import { useIsScrolledDown } from "#imports";
+
+const scrolledDown = shallowRef(false);
+
+useIsScrolledDown(scrolledDown);
+
 defineProps<{
   items: { text: string; id: string }[];
   withoutHamburgerMenu?: boolean;
@@ -85,16 +95,23 @@ nav {
         margin: 0;
       }
     }
+    .transparent-background {
+      background-color: rgba(47, 47, 82, 1);
+      border-bottom: 1px solid white;
+    }
 
     .background {
+      position: absolute;
+      z-index: 5;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      transition: 0.5s;
+
       @media screen and (max-width: 1150px) {
-        position: absolute;
-        z-index: 5;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        background: $background-color;
+        background-color: rgba(47, 47, 82, 1);
+        border-bottom: 1px solid white;
       }
     }
 
