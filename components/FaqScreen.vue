@@ -1,36 +1,35 @@
 <template>
   <section ref="sectionRef" class="container">
     <span class="title">Faq</span>
-    <article
-      v-if="!error"
-      v-for="question of questions"
-      :key="question.id"
-      class="question-container"
-    >
-      <div class="question-inner-container">
-        <span class="question">
-          {{ question.name }}
-        </span>
-        <div
-          @click="handleClick(question.id)"
-          class="toggle"
-          :class="{
-            rotate: openedQuestionID === question.id,
-            'rotate-back': openedQuestionID !== question.id,
-            opened: openedQuestionID === question.id,
-          }"
-        >
-          <span class="line-one"></span>
-          <span class="line-two"></span>
+    <TransitionGroup v-if="!error" name="list" tag="div">
+      <article
+        v-for="question of questions"
+        :key="question.id"
+        class="question-container"
+      >
+        <div class="question-inner-container">
+          <span class="question">
+            {{ question.name }}
+          </span>
+          <div
+            @click="handleClick(question.id)"
+            class="toggle"
+            :class="{
+              rotate: openedQuestionID === question.id,
+              'rotate-back': openedQuestionID !== question.id,
+              opened: openedQuestionID === question.id,
+            }"
+          >
+            <span class="line-one"></span>
+            <span class="line-two"></span>
+          </div>
         </div>
-      </div>
 
-      <TransitionGroup name="list" tag="div">
         <div v-if="openedQuestionID === question.id" class="answer-container">
           <span class="answer">{{ question.body }}</span>
         </div>
-      </TransitionGroup>
-    </article>
+      </article>
+    </TransitionGroup>
     <div v-else>
       <FetchDataError
         message="Wystapił błąd. Spróbuj odswieżyć stronę. Jeżeli to nie zadziała spróbuj
@@ -93,15 +92,22 @@ function handleClick(id: number) {
 
 <style scoped lang="scss">
 .list-move,
-.list-enter-active,
+.list-enter-active {
+  transition: all 0.4s cubic-bezier(0.42, 0.97, 0.52, 1.49);
+}
+
 .list-leave-active {
-  transition: all 0.5s cubic-bezier(0.42, 0.97, 0.52, 1.49);
+  transition: all 0.4s cubic-bezier(0.42, 0.97, 0.52, 1.49);
+  transition-delay: 0.2s;
 }
 
 .list-enter-from,
 .list-leave-to {
   opacity: 0;
   transform: translateY(30px);
+}
+.list-leave-active {
+  position: absolute;
 }
 
 .opened {
@@ -134,6 +140,21 @@ function handleClick(id: number) {
       font-size: 1.125rem;
       line-height: 25.2px;
       padding-bottom: 16px;
+      animation: fadeInUp 0.5s cubic-bezier(0.42, 0.97, 0.52, 1.49) 0.5s
+        forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        transform: translateY(15px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
     }
   }
 
