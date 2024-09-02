@@ -2,6 +2,7 @@
   <section>
     <NuxtPicture
       v-for="partner in partnersLogos"
+      :key="partner.src"
       :src="partner.src"
       :alt="partner.alt"
       width="240"

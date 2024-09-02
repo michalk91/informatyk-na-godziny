@@ -4,6 +4,7 @@
     <article
       v-if="!error"
       v-for="question of questions"
+      :key="question.id"
       class="question-container"
     >
       <div class="question-inner-container">

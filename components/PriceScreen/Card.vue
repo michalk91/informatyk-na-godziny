@@ -8,7 +8,7 @@
       </div>
     </div>
     <div class="list-container">
-      <div class="paragraph" v-for="item of detailsList">
+      <div class="paragraph" v-for="item of detailsList" :key="item">
         <div
           class="icon"
           :class="{

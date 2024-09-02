@@ -23,7 +23,7 @@
         showNav: menuOpen && !withoutHamburgerMenu,
       }"
     >
-      <li v-for="item of items" @click.stop="setScreen(item.id)">
+      <li v-for="item of items" :key="item.id" @click.stop="setScreen(item.id)">
         {{ item.text }}
       </li>
       <li>
