@@ -76,6 +76,7 @@ onMounted(() => {
 
   .inner-container {
     display: flex;
+    margin: 0 auto;
     max-width: 1319px;
     overflow: hidden;
     background: linear-gradient(
