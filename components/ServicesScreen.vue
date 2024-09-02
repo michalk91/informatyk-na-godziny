@@ -32,7 +32,7 @@ onMounted(() => {
 }
 section {
   display: grid;
-  scroll-margin-top: 200px;
+  scroll-margin-top: $section-scroll-margin-top;
   margin-top: 148px;
   max-width: 100%;
   justify-content: space-around;
