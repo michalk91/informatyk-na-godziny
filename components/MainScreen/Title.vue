@@ -23,11 +23,11 @@
 
 <script setup lang="ts">
 const emit = defineEmits<{
-  (e: "openModal", target: any): void;
+  (e: "open-modal", target: any): void;
 }>();
 
 function handleEmitClickWIthEvent(e: HTMLElement) {
-  emit("openModal", e);
+  emit("open-modal", e);
 }
 </script>
 

@@ -1,10 +1,10 @@
 <template>
   <Modal
     :isOpen="isOpen"
-    @closeModal="handleCloseModal"
-    @onAnimationEnded="unlockScroll"
+    @close-modal="handleCloseModal"
+    @on-animation-ended="unlockScroll"
   >
-    <ModalContent @closeModal="handleCloseModal" />
+    <ModalContent @close-modal="handleCloseModal" />
   </Modal>
   <section ref="sectionRef" class="wrapper" @click="handleOpenModal">
     <PriceScreenCard

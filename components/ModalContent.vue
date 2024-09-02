@@ -13,7 +13,7 @@
           <ActionButton
             additionalClass="btn-white"
             text="Anuluj"
-            @click="$emit('closeModal')"
+            @click="$emit('close-modal')"
           />
           <ActionButton additionalClass="btn-orange" text="Zamów" />
         </div>
@@ -25,7 +25,7 @@
 <script setup lang="ts">
 const { role } = useRoleStore();
 
-const emits = defineEmits(["closeModal"]);
+const emits = defineEmits(["close-modal"]);
 </script>
 
 <style scoped lang="scss">

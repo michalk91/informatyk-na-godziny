@@ -1,8 +1,8 @@
 <template>
   <Modal
     :isOpen="isOpen"
-    @closeModal="handleCloseModal"
-    @onAnimationEnded="unlockScroll"
+    @close-modal="handleCloseModal"
+    @on-animation-ended="unlockScroll"
   >
     <ModalContent @closeModal="handleCloseModal" />
   </Modal>
