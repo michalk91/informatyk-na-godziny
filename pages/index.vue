@@ -2,8 +2,8 @@
   <MainScreen />
   <ServicesScreen />
   <PriceScreen />
-  <Faq />
-  <Contact />
+  <FaqScreen />
+  <ContactScreen />
 </template>
 
 <script setup lang="ts"></script>
