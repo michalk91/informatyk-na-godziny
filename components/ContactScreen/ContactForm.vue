@@ -1,11 +1,10 @@
 <template>
   <form @submit.prevent="handleSubmit">
     <div>
-      <label for="name" aria-hidden="true">Imię i nazwisko:</label>
       <input
         type="text"
         id="name"
-        aria-label="name and surrname"
+        aria-label="Imię i nazwisko"
         :placeholder="
           errorMessages.nameAndSurname === ''
             ? 'Imię i nazwisko'
@@ -16,11 +15,10 @@
       />
     </div>
     <div>
-      <label for="email" aria-hidden="true">Email:</label>
       <input
         type="text"
         id="email"
-        aria-label="email"
+        aria-label="Email"
         :placeholder="
           errorMessages.email === '' ? 'Email' : errorMessages.email
         "
@@ -29,10 +27,9 @@
       />
     </div>
     <div>
-      <label for="phone-number" aria-hidden="true">Nr telefonu:</label>
       <input
         type="tel"
-        aria-label="phone number"
+        aria-label="Nr telefonu"
         :placeholder="
           errorMessages.tel === '' ? 'Nr telefonu' : errorMessages.tel
         "
@@ -42,10 +39,9 @@
       />
     </div>
     <div>
-      <label for="message" aria-hidden="true">Wiadomość:</label>
       <textarea
         id="message"
-        aria-label="message"
+        aria-label="Wiadomość"
         :placeholder="
           errorMessages.message === '' ? 'Wiadomość' : errorMessages.message
         "
@@ -152,10 +148,6 @@ form {
     font-weight: 700;
     font-size: 0.875rem;
     line-height: 24px;
-  }
-
-  label {
-    display: none;
   }
 
   .invalid-input {
