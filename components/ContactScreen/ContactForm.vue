@@ -130,6 +130,7 @@ function handleSubmit() {
       autoClose: 2000,
       position: "bottom-right",
       theme: "light",
+      toastStyle: { backgroundColor: "rgb(84, 86, 112)", color: "white" },
     });
 
     resetState(formData);
