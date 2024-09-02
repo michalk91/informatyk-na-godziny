@@ -108,6 +108,14 @@ defineProps<{
     font-size: 1.25rem;
     line-height: 28px;
 
+    @media screen and (max-width: 600px) {
+      padding-top: 0;
+    }
+
+    @media screen and (max-width: 620px) {
+      font-size: 1.1rem;
+    }
+
     .paragraph {
       display: flex;
       align-items: center;
@@ -161,6 +169,7 @@ defineProps<{
     padding-left: 38px;
     padding-right: 18px;
     padding-top: 29px;
+    column-gap: 20px;
 
     .name {
       font-size: 2.125rem;
@@ -172,8 +181,12 @@ defineProps<{
     }
 
     .price-container {
-      @media screen and (max-width: 620px) {
-        margin-top: -25px;
+      @media screen and (max-width: 552px) {
+        margin-top: -20px;
+      }
+
+      @media screen and (max-width: 450px) {
+        margin-top: -30px;
       }
 
       .price {

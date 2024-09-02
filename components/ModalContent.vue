@@ -91,14 +91,12 @@ const emits = defineEmits(["close-modal"]);
     }
 
     @media screen and (max-height: 700px) {
-      max-height: calc(100vh - 210px);
-      overflow-y: auto;
       padding-left: 40px;
       padding-right: 40px;
     }
     @media screen and (max-width: 500px) {
-      padding-left: 15px;
-      padding-right: 15px;
+      padding-left: 20px;
+      padding-right: 20px;
     }
 
     @media screen and (max-width: 360px) {

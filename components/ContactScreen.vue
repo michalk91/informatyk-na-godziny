@@ -115,10 +115,10 @@ onMounted(() => {
       }
 
       @media screen and (max-width: 490px) {
-        margin: 50px;
+        margin: 40px;
       }
       @media screen and (max-width: 400px) {
-        margin: 45px;
+        margin: 35px;
       }
 
       .submit-btn {
