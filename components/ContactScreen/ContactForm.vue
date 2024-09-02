@@ -105,7 +105,7 @@ function validateForm() {
     },
     message: {
       regex: /^.{10,}$/,
-      error: "Wiadomość nie może być pusta.",
+      error: "Wiadomość musi zawierać przynajmniej 10 znaków.",
     },
   };
 
