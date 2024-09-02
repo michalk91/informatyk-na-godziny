@@ -1,11 +1,14 @@
 <template>
   <div>
-    Wystapił błąd. Spróbuj odswieżyć stronę. Jeżeli to nie zadziała spróbuj
-    ponownie później.
+    {{ message }}
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+defineProps<{
+  message: string;
+}>();
+</script>
 
 <style scoped lang="scss">
 div {

@@ -31,7 +31,10 @@
       </TransitionGroup>
     </article>
     <div v-else>
-      <FetchDataError />
+      <FetchDataError
+        message="Wystapił błąd. Spróbuj odswieżyć stronę. Jeżeli to nie zadziała spróbuj
+    ponownie później."
+      />
     </div>
   </section>
 </template>
