@@ -7,8 +7,8 @@
         <span class="currency">zł/h netto*</span>
       </div>
     </div>
-    <div class="list-container">
-      <div class="paragraph" v-for="item of detailsList" :key="item">
+    <ul class="list-container">
+      <li class="paragraph" v-for="item of detailsList" :key="item">
         <div
           class="icon"
           :class="{
@@ -19,9 +19,9 @@
           <NuxtPicture src="/images/icons/check_mark.svg" alt="check mark" />
         </div>
         <p>{{ item }}</p>
-      </div>
-      <p class="started-hour">*Każda rozpoczęta godzina</p>
-    </div>
+      </li>
+    </ul>
+    <p class="started-hour">*Każda rozpoczęta godzina</p>
     <div class="btn-container">
       <slot name="button" />
     </div>
@@ -139,12 +139,17 @@ defineProps<{
         background-color: #682ee4;
       }
     }
-    .started-hour {
-      margin-top: 33px;
+  }
 
-      @media screen and (max-width: 620px) {
-        font-size: 3vw;
-      }
+  .started-hour {
+    padding-left: 38px;
+    padding-right: 38px;
+    margin-top: 33px;
+    font-size: 14px;
+    line-height: 19.6px;
+
+    @media screen and (max-width: 620px) {
+      font-size: 3vw;
     }
   }
 
