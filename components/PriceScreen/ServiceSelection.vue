@@ -63,7 +63,7 @@ const { lockScroll, unlockScroll } = useScrollLock({
 
 const store = useRoleStore();
 
-const isOpen = ref(false);
+const isOpen = shallowRef(false);
 
 const ITSepcialistDetails = [
   "Drukarki",

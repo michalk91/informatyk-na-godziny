@@ -20,7 +20,7 @@ import useScrollToSection from "~/composables/useScrollToSection";
 import useScrollLock from "~/composables/useScrollLock";
 
 const roleStore = useRoleStore();
-const isOpen = ref(false);
+const isOpen = shallowRef(false);
 const sectionRef = ref<null | HTMLElement>(null);
 const screenName = useScreenStore();
 
