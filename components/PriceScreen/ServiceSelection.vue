@@ -102,7 +102,7 @@ function handleRole(e: MouseEvent) {
   if (role === "Informatyk") {
     store.updateRole({ type: role, price: 160 });
   } else if (role === "Administrator") {
-    store.updateRole({ type: role, price: 260 });
+    store.updateRole({ type: role, price: 220 });
   }
 }
 </script>
